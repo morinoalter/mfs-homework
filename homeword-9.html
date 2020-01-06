@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style type="text/css">
+       body{
+           display: flex;
+       }
+       div{padding: 5px;}
+       
+       p{margin: 0;
+         display: none;
+        }
+
+       .nav:hover{
+           color: red;
+       }
+
+       .nav:hover+p{
+           display: block;
+           color: red;
+       }
+       </style>
+    </head>
+
+    <body>
+     <div>
+         <span class="nav">导航一</span>
+         <p>
+         <span>1</span><br/>
+         <span>2</span><br/>
+         <span>3</span><br/>
+         </p>
+     </div>
+     <div>
+        <span class="nav">导航二</span>
+        <p>
+         <span>21</span><br/>
+         <span>22</span><br/>
+         <span>23</span><br/>
+        </p>
+    </div>
+
+
+    </body>
+</html>
