@@ -5,31 +5,111 @@
     <style type="text/css">
      .contain1{
          display: flex;
-         width:
+         background-color: black;
+         width: 600px;
+         
+         flex-wrap: wrap;
+         justify-content: center;
+         align-content: center;
      }
 
+     .shai{
+         width:250px;
+         height: 250px;
+         background-color: white;
+         border-radius: 10px;
+         margin: 10px;
+         padding: 10px;
+
+         display: flex;
+     }
+
+     .point{
+         background-color: black;
+         border-radius: 50%;
+         width: 70px;
+         height: 70px;
+     }
+
+
+    
+    .one{
+      align-items: center;
+      justify-content: center;
+    }
+    .two{
+      justify-content: space-between;
+      
+    }
+    .four{
+        flex-direction: column;
+        justify-content: space-between;
+    }
     </style>
 
 </head>
 
 <body>
    <div class="contain1">
-       <div class="shai">
-          <div class="point">
-              
-          </div>
+       <div class="shai one">
+          <div class="point"></div>
        </div>
         
-       <div class="shai">
-           
+       <div class="shai two">
+           <div class="point" ></div>
+           <div class="point" style="align-self: flex-end"></div>
        </div>
 
-        <div class="shai">
-           
+        <div class="shai two">
+                <div class="point" ></div>
+                <div class="point" style="align-self: center"></div>
+                <div class="point" style="align-self: flex-end"></div>
         </div>
 
-        <div class="shai">
-           
+        <div class="shai four">
+                <div class="two" style="display: flex">
+                <div class="point" ></div>
+                <div class="point"></div>
+                </div>
+
+                <div class="two" style="display: flex">
+                <div class="point" ></div>
+                <div class="point" ></div>
+                </div>
+        </div>
+        
+        <div class="shai four">
+                <div class="two" style="display: flex">
+                <div class="point" ></div>
+                <div class="point"></div>
+                </div>
+               
+                <div style="display: flex; justify-content:center">
+                    <div class="point" ></div>
+                       
+                </div>
+                 
+                <div class="two" style="display: flex">
+                <div class="point" ></div>
+                <div class="point" ></div>
+                </div>
+        </div>
+
+        <div class="shai four">
+                <div class="two" style="display: flex">
+                <div class="point" ></div>
+                <div class="point"></div>
+                </div>
+
+                <div class="two" style="display: flex">
+                        <div class="point" ></div>
+                        <div class="point" ></div>
+                        </div>
+
+                <div class="two" style="display: flex">
+                <div class="point" ></div>
+                <div class="point" ></div>
+                </div>
         </div>
    </div>
     
