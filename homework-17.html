@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style type="text/css">
+      .contain{
+          position: fixed;
+          top:50px;
+          left: 50px;
+          z-index: 1;
+
+          width:400px;
+          height: 230px;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+      }
+
+      .t1{
+          font-size: 30px;
+          margin-bottom: 10px;
+      }
+      .t2{
+          font-size: 50px;
+          font-weight: bold;
+      }
+
+      .circle{
+         position: fixed;
+         top:70px;
+         left:15px;
+         z-index: 2;
+    
+
+         height: 70px;
+         width: 70px;
+         border-radius: 50%;
+
+         background-color: yellow;
+      }
+
+      .tro{
+          position: fixed;
+          z-index: 2;
+          transform: rotate(-200deg);
+
+          left: 300px;
+
+          width: 0;
+          height: 0;
+          border:40px solid yellow;
+          border-right-width: 0;
+          border-top-color:transparent;
+          border-bottom-color: transparent;
+      }
+
+   </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="tro"></div>
+
+    <div class="contain">
+      <div class="t1">SHARED COURSE</div>
+      <div class="t2"> 课程分享</div>
+    </div>
+    
+
+</body>
+</html>
