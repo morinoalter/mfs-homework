@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+   <style type="text/css">
+     .nav{
+         background-color: gainsboro;
+         border-radius: 5px;
+         display: flex;
+         justify-content: flex-start;
+     }
+     div{
+         color: gray;
+         margin: 0 5px;
+         padding: 10px;
+     }
+     .act{background-color: #AAA;}
+     .font1{font-size: 20px;}
+     .font2{font-size: 18px;}
+
+   @media only screen and (max-width: 500px) {
+       .nav{
+           flex-direction: column;
+       }
+
+       div{margin:0;}
+   }
+
+   </style>
+
+</head>
+<body>
+  <nav class="nav">
+      <div class="font1">菜鸟教程</div>
+      <div class="font2 act">iOS</div>
+      <div class="font2">SVN</div>
+      <div class="font2">Java</div>
+  </nav>
+</body>
+</html>
