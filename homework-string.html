@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text" id="text" oninput="getback(this)" />
+    <div>文件后缀为：
+        <p id="textback"></p>
+    </div>
+    <script>
+        function getback(element) {
+            var str1 = element.value;
+            var str2 = str1.slice(str1.lastIndexOf("."));
+            if (str2.length != 1) {
+                document.getElementById('textback').innerHTML = str2;
+            } else document.getElementById('textback').innerHTML = '';
+            console.log(element)
+
+        }
+    </script>
+
+    <div>
+        请输入英文语句：<input type="text" id="text2" />
+        <input type="button" value="变换" onclick="change()" />
+        <div>变换结果：<span id="textchanged"></span></div>
+    </div>
+    <script>
+        function change() {
+            var str1 = document.getElementById("text2").value;
+            var strArray = str1.split(" ");
+            console.log(strArray);
+
+            var str2 = '';
+            for (var i = 0; i < strArray.length; i++) {
+                var l = strArray[i].charAt(0).toUpperCase();
+                str2 += l + strArray[i].substring(1)
+                if (i < strArray.length - 1) str2 += ' ';
+            }
+            document.getElementById("textchanged").innerHTML = str2
+
+        }
+    </script>
+
+
+</body>
+
+</html>
