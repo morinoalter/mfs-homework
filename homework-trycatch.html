@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onerror = function(x) {
+            alert(x)
+        }
+
+        function asyncTask() {
+            setTimeout(function() {
+                throw new Error("An error")
+            }, 1000)
+        }
+        try {
+            asyncTask()
+        } catch (err) {
+            console.log(err)
+        }
+    </script>
+</body>
+
+</html>

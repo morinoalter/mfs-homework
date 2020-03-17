@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas tutorial</title>
+
+    <script type="text/javascript">
+        function clock() {
+            var now = new Date();
+            var ctx = document.getElementById('canvas').getContext('2d');
+            //设置原点在画布中央，缩放0.4倍数，逆时针旋转90度
+            ctx.save();
+            ctx.clearRect(0, 0, 150, 150);
+            ctx.translate(75, 75);
+            ctx.scale(0.4, 0.4);
+            ctx.rotate(-Math.PI / 2);
+            ctx.strokeStyle = "black";
+            ctx.fillStyle = "white";
+            ctx.lineWidth = 8;
+            ctx.lineCap = "round";
+
+            // 画小时标记
+            ctx.save();
+            for (var i = 0; i < 12; i++) {
+                ctx.beginPath();
+                ctx.rotate(Math.PI / 6);
+                ctx.moveTo(100, 0);
+                ctx.lineTo(120, 0);
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            // 画分钟标记
+            ctx.save();
+            ctx.lineWidth = 5;
+            for (i = 0; i < 60; i++) {
+                if (i % 5 != 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(117, 0);
+                    ctx.lineTo(120, 0);
+                    ctx.stroke();
+                }
+                ctx.rotate(Math.PI / 30);
+            }
+            ctx.restore();
+
+            //获取时间
+            var sec = now.getSeconds();
+            var min = now.getMinutes();
+            var hr = now.getHours();
+            hr = hr >= 12 ? hr - 12 : hr;
+
+            ctx.fillStyle = "black";
+
+            // 画时针
+            ctx.save();
+            ctx.rotate((Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec)
+            ctx.lineWidth = 14;
+            ctx.beginPath();
+            ctx.moveTo(-20, 0);
+            ctx.lineTo(80, 0);
+            ctx.stroke();
+            ctx.restore();
+
+            // 画分针
+            ctx.save();
+            ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec)
+            ctx.lineWidth = 10;
+            ctx.beginPath();
+            ctx.moveTo(-28, 0);
+            ctx.lineTo(112, 0);
+            ctx.stroke();
+            ctx.restore();
+
+            // 画秒针
+            ctx.save();
+            ctx.rotate(sec * Math.PI / 30);
+            ctx.strokeStyle = "#D40000";
+            ctx.fillStyle = "#D40000";
+            ctx.lineWidth = 6;
+            ctx.beginPath();
+            ctx.moveTo(-30, 0);
+            ctx.lineTo(83, 0);
+            ctx.stroke();
+
+            //画原点的红点
+            ctx.beginPath();
+            ctx.arc(0, 0, 10, 0, Math.PI * 2, true);
+            ctx.fill();
+            //画秒针头的圈
+            ctx.beginPath();
+            ctx.arc(95, 0, 10, 0, Math.PI * 2, true);
+            ctx.stroke();
+            ctx.restore();
+
+            //画外表盘
+            ctx.beginPath();
+            ctx.lineWidth = 14;
+            ctx.strokeStyle = '#325FA2';
+            ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+            ctx.stroke();
+
+            ctx.restore();
+
+            window.requestAnimationFrame(clock);
+        }
+
+        window.requestAnimationFrame(clock);
+    </script>
+
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="canvas" width="150" height="150"></canvas>
+</body>
+
+</html>
