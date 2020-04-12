@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    background: rgb(235, 235, 235);
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    height: 6rem;
+    margin: 40px;
+    margin-top: 50px;
+    position: relative;
+    top: 30px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    background-position: center 20%;
+    background-size: cover;
+    background-image: url(https://www.golaravel.com/assets/images/header-bg.jpg);
+    padding: 5px;
+    width: initial;
+}
+
+.header-word {
+    margin: 30px auto;
+    font-size: 30px;
+    font-family: Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Hiragino Sans GB W3, WenQuanYi Micro Hei, Microsoft YaHei UI, Microsoft YaHei, sans-serif;
+    font-weight: 400;
+    line-height: 33px;
+    color: white;
+}
+
+.cont-1 {
+    display: flex;
+    flex-direction: column;
+    text-justify: center;
+}
+
+.nav {
+    background: white;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 2px solid #e1e1e1;
+    color: #505050;
+    line-height: 1.75em;
+    font-family: Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Hiragino Sans GB W3, WenQuanYi Micro Hei, Microsoft YaHei UI, Microsoft YaHei, sans-serif;
+    padding: 15px;
+}
+
+.cont {
+    width: 947px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+}
+
+.nav-btn:hover {
+    color: pink;
+}
+
+.cont-body {
+    margin: 30px auto;
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+}
+
+.contain {
+    width: 800px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arti {
+    width: 90%;
+    background: white;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arti-border {
+    width: 100%;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    margin: 20px 0;
+}
+
+.arti-title {
+    margin: 20px auto;
+    color: rgb(48, 48, 48);
+    font-size: 2em;
+    line-height: 1.2em;
+    font-weight: 400;
+    font-family: Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Hiragino Sans GB W3, WenQuanYi Micro Hei, Microsoft YaHei UI, Microsoft YaHei, sans-serif;
+}
+
+.arti-subtitle {
+    color: rgb(149, 149, 149);
+    margin: 0 0 14px 0;
+}
+
+.arti-img {
+    width: 100%;
+}
+
+.arti-text {
+    margin: 15px 0;
+    font: 400 18px/1.62 Georgia, Xin Gothic, Hiragino Sans GB, Droid Sans Fallback, Microsoft YaHei, sans-serif;
+}
+
+.arti-btn {
+    align-self: flex-start;
+    background: #f4645f;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.arti-btn:hover {
+    background: black;
+}
+
+.side {
+    width: 300px;
+    background: white;
+    align-self: flex-start;
+}
+
+.side-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.side-title {
+    width: 100%;
+    border-bottom: 2px solid rgb(235, 235, 235);
+    margin: 5px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.foot_border {
+    width: 100%;
+    border-bottom: 2px solid rgb(48, 48, 48);
+}
+
+.side-title-text {
+    font-size: 21px;
+    width: 30%;
+    color: rgb(48, 48, 48);
+    border-bottom: 2px solid #f4645f;
+}
+
+.side-btn {
+    color: white;
+    width: 100%;
+    height: 30px;
+    background: #f4645f;
+    margin: 4px;
+    padding: 10px -1px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+.nonedec {
+    color: white;
+}
+
+.side-btn:hover {
+    background: black;
+}
+
+.foot {
+    color: rgb(149, 149, 149);
+    background: rgb(17, 17, 17);
+    padding: 5px;
+}
+
+.foot-cont {
+    display: flex;
+    justify-content: space-around;
+    background: rgb(32, 32, 32);
+    padding: 30px 50px;
+}
+
+.slide {
+    width: 300px;
+}
+
+.foot-mess {
+    border-bottom: 1px dashed rgb(48, 48, 48);
+    margin: 5px 0;
+    padding: 15px 0;
+}
+
+.foot-mes-title {
+    color: rgb(149, 149, 149);
+    font-size: 14px;
+    margin: 5px;
+}
+
+.time {
+    color: rgb(80, 80, 80);
+    font-size: 13px;
+    margin: 5px;
+}
+
+.foot-connect {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.foot-con-a {
+    margin: 10px;
+    padding: 3px;
+    text-decoration: none;
+    color: rgb(149, 149, 149);
+    transition: all .2s ease-in-out;
+}
+
+.foot-con-a:hover {
+    background: #f4645f;
+    color: white;
+}
+
+.foot-botton {
+    margin: 30px 0;
+    padding: 1px;
+    text-align: center;
+    color: rgb(85, 85, 85);
+    font-family: Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Hiragino Sans GB W3, WenQuanYi Micro Hei, Microsoft YaHei UI, Microsoft YaHei, sans-serif;
+}
