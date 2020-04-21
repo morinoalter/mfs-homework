@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="signup" action="#" target="_blank" onsubmit="return onSignupFormSubmit()">
+        <p id="signup-error" style="color:red"></p>
+        <p>
+            用户名:
+            <input id="username" type="text" name="username">
+        </p>
+        <p>
+            口令:
+            <input type="password" id="password" name="password">
+        </p>
+        <p>
+            重复口令:
+            <input type="password" id="password-2">
+        </p>
+        <p>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+        </p>
+    </form>
+
+    <script>
+        function onSignupFormSubmit() {
+            var un = document.getElementById("username").value;
+            var psw = document.getElementById("password").value;
+            var psw2 = document.getElementById("password-2").value;
+            var oerr = document.getElementById("signup-error");
+
+
+            if (un.length < 3 || un.length > 10) {
+                oerr.innerText = "用户名长度必须3-10位";
+                return false;
+            }
+
+            if (psw.length < 6 || psw.length > 20) {
+                oerr.innerText = "密码长度必须6-20位置！";
+                return false;
+            }
+            if (psw !== psw2) {
+                oerr.innerText = "两次密码不一致！！！";
+                return false;
+            }
+
+            oerr.innerText = "";
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
