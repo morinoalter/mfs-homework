@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkPassword(str) {
+            if (str.length < 6 || str.length > 16) {
+                return false;
+            }
+            //首字符
+            var patter = /[a-zA-Z_]\w*/;
+            if (!str.match(patter)) return false;
+            //3种
+            var cnt = 0;
+            patter = /a-z/;
+            if (patter.test(str)) cnt++;
+            patter = /A-Z/;
+            if (patter.test(str)) cnt++;
+            patter = /_/;
+            if (patter.test(str)) cnt++;
+            if (patter.test(/\d/)) cnt++;
+            if (cnt < 3) return false;
+            //其他字符
+            patter = /[^a-zA-Z0-9_]/;
+            if (patter.test(str)) return false;
+
+            return true;
+
+        }
+
+        function addClass(str, clazz) {
+            return str + ' ' + clazz;
+        }
+
+        function removeClass(str, clazz) {
+            var pstr = '\\b' + clazz + '\\b';
+            var patter = new RegExp(clazz);
+
+            str = str.replace(patter, "");
+            return str;
+        }
+
+
+        function getInfo(html) {
+            var ans = [];
+            var ptitle = /(?<=<h4 class="_3O-WB6Wi" data-reactid="\d*">).*?(?=<\/h4>)/g;
+            var pteacher = /(?<=导师：<!-- \/react-text --><!-- react-text: \d* -->).*?(?=<!-- \/react-text -->)/g;
+            var ptime = /(?<=时长：<!-- \/react-text --><!-- react-text: \d* -->).*?(?=<!-- \/react-text -->)/g;
+
+            var title = html.match(ptitle);
+            var teacher = html.match(pteacher);
+            var time = html.match(ptime);
+
+            for (let i = 0; i < title.length; i++) {
+                let l = {};
+                l.title = title[i];
+                l.teacher = teacher[i];
+                l.time = time[i];
+                ans.push(l);
+            }
+            console.log(ans);
+        }
+
+        function parseURL(str) {
+            var ans = {};
+            // ans.protocol = str.match(/.*?(?=:\/\/)/)[0];
+            //ans.host= str.match(/(?<=:\/\/).*?(?=\/)/)[0];
+            //ans.port= ans.host.split(':')[1];
+            //ans.hostname=ans.host.split(':')[0];
+            //ans.hash=str.match(/(?<=#).*/)[0];
+            //ans.query=str.match(/(?<=).*?(?=\?)/)[0];
+            var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+            ans = str.match(parse_url);
+            console.log(ans);
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
