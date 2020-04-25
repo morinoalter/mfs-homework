@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe src="http://www.a.com:8080/homework-canvas.html" frameborder="0" width="80%" height="800"></iframe>
+
+
+    <script>
+        document.domain = "a.com";
+        setTimeout(() => {
+            console.log(
+                window.frames[0].document.getElementById("canvas")
+            )
+        }, 2000);
+
+
+        //动态生成回调函数
+        var callbackname = 'callback';
+        var comStr = ' console.log(data);'
+        var functionStr = 'function ' + callbackname + '(data){' + comStr + '}';
+        eval(functionStr);
+        //添加script
+        var scrDom = document.createElement('script');
+        scrDom.src = "www.b.com:8000" + '?callbackname=' + callbackname;
+        var body = document.getElementsByTagName('body')[0];
+        body.insertBefore(scrDom, body.firstChild);
+    </script>
+
+
+</body>
+
+</html>

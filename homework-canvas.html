@@ -5,6 +5,9 @@
     <title>Canvas tutorial</title>
 
     <script type="text/javascript">
+        document.domain = "a.com"
+        alert("canvas: " + document.domain);
+
         function clock() {
             var now = new Date();
             var ctx = document.getElementById('canvas').getContext('2d');
