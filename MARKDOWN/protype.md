@@ -37,3 +37,4 @@ function(proto){
 =====
 假定我们的代码中需要4个类，分别是 Animal，Dog，Cat，Human。Animal 有方法 eat,sleep;Dog,Cat有方法bark；Human有方法speak；请使用js中的继承实现
 
+代码：https://github.com/morinoalter/mfs-homework/blob/master/homework-proto.html
